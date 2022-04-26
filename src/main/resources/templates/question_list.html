@@ -58,7 +58,7 @@
                 th:each="page : ${#numbers.sequence(0, paging.totalPages - 1)}"
                 th:if="${paging.number - 5 < page && page < paging.number + 5}">
                 <a class="page-link" href="javascript:void(0);"
-                   th:data-page="@{|?page=${page}|}"
+                   th:data-page="${page}"
                    th:text="${page + 1}">
                 </a>
             </li>
