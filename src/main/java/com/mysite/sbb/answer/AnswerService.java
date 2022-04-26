@@ -31,8 +31,8 @@ public class AnswerService {
         answerDto.setCreateDate(LocalDateTime.now());
         answerDto.setQuestion(questionDto);
         answerDto.setAuthor(author);
-        this.answerRepository.save(of(answerDto));
-        return questionDto.getAnswerList().get(questionDto.getAnswerList().size() - 1);
+        answerDto = of(this.answerRepository.save(of(answerDto)));
+        return answerDto;
     }
 
     public AnswerDto getAnswer(Integer id) {
